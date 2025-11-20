@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f8fafc;
+  --foreground: #101828;
+  --muted: #697386;
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 23, 42, 0.08);
+  --icon-bg: #f3f5f9;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #050505;
+  --foreground: #f8fafc;
+  --muted: rgba(248, 250, 252, 0.7);
+  --card-bg: rgba(15, 15, 15, 0.8);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --icon-bg: rgba(255, 255, 255, 0.1);
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #f8fafc;
+}
+
+.dark .text-slate-700 {
+  color: #e2e8f0;
+}
+
+.dark .text-slate-600 {
+  color: #cbd5f5;
+}
+
+.dark .text-slate-500 {
+  color: #b4bcd2;
+}
+
+.dark .text-slate-400 {
+  color: #a0a8bf;
+}
+
+.dark .text-slate-300 {
+  color: #8f98b0;
+}
+
+.dark .bg-white,
+.dark .bg-slate-50,
+.dark .bg-slate-100 {
+  background-color: #070707;
+}
+
+.dark .border-slate-200 {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.dark .border-slate-900 {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.dark .text-slate-400,
+.dark .text-slate-300,
+.dark .text-slate-200 {
+  transition: color 0.2s ease;
+}
+
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  @apply bg-accent/20 text-[var(--foreground)];
+}
+
+.link-underline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.35rem;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
