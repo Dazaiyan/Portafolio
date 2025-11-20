@@ -83,7 +83,7 @@ export type Content = {
 const baseProfileES: PersonalInfo = {
   name: "Juan Daza",
   phone: "(593) 987 156 456",
-  city: "Manta – Urbanización Ciudad del Sol, Ecuador",
+  city: "Manta –  Ecuador",
   email: "jusedame@hotmail.com",
   idNumber: "1315354306",
   currentRole: "Estudiante de Ingeniería en Software (PUCESM)",
@@ -92,7 +92,7 @@ const baseProfileES: PersonalInfo = {
 const baseProfileEN: PersonalInfo = {
   name: "Juan Daza",
   phone: "(593) 987 156 456",
-  city: "Manta – Ciudad del Sol, Ecuador",
+  city: "Manta – Ecuador",
   email: "jusedame@hotmail.com",
   idNumber: "1315354306",
   currentRole: "Software Engineering Student (PUCESM)",
@@ -226,7 +226,7 @@ const educationES: Education[] = [
   {
     title: "Ingeniería en Software",
     institution: "Pontificia Universidad Católica del Ecuador Sede Manabí (PUCESM)",
-    location: "Manta, Ecuador",
+    location: "Portoviejo, Ecuador",
     dates: "2022 – Presente",
     description:
       "Cursando la carrera de Ingeniería en Software, desarrollando habilidades en desarrollo web, backend, bases de datos, redes y arquitectura de software.",
@@ -235,7 +235,7 @@ const educationES: Education[] = [
   {
     title: "Programa de Intercambio en Ingeniería de Software",
     institution: "Universidad Europea del Atlántico",
-    location: "España",
+    location: "España, Santander",
     dates: "2025 – 2025",
     description:
       "Intercambio académico enfocado en ampliar la visión internacional del desarrollo de software, metodologías ágiles y trabajo colaborativo en proyectos multiculturales.",
@@ -255,8 +255,8 @@ const educationES: Education[] = [
 const educationEN: Education[] = [
   {
     title: "Software Engineering",
-    institution: "Pontificia Universidad Católica del Ecuador Sede Manabí (PUCESM)",
-    location: "Manta, Ecuador",
+    institution: "",
+    location: "Portoviejo, Ecuador",
     dates: "2022 – Present",
     description:
       "Pursuing a Software Engineering degree, developing skills in web development, backend, databases, networks, and software architecture.",
@@ -265,7 +265,7 @@ const educationEN: Education[] = [
   {
     title: "Software Engineering Exchange Program",
     institution: "Universidad Europea del Atlántico",
-    location: "Spain",
+    location: "Spain, Santander",
     dates: "2025 – 2025",
     description:
       "Academic exchange focused on expanding the international perspective of software development, agile methodologies, and collaborative work across multicultural teams.",

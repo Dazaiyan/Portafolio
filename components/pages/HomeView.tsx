@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 import { SectionTitle } from "@/components/SectionTitle";
 import { Tag } from "@/components/Tag";
 import { useLocale } from "@/components/locale-provider";
@@ -38,6 +39,7 @@ const revealClass = (visible: boolean) => `transition-all duration-700 ${visible
 
 export function HomeView() {
   const { content, locale } = useLocale();
+  const { resolvedTheme } = useTheme();
   const isSpanish = locale === "es";
   const infoLabels = {
     phone: isSpanish ? "Teléfono" : "Phone",
@@ -47,6 +49,7 @@ export function HomeView() {
     role: isSpanish ? "Rol actual" : "Current role",
   };
 
+  const [mounted, setMounted] = useState(false);
   const [profileRef, profileVisible] = useReveal<HTMLElement>();
   const [educationRef, educationVisible] = useReveal<HTMLDivElement>();
   const [certRef, certVisible] = useReveal<HTMLDivElement>();
@@ -54,6 +57,12 @@ export function HomeView() {
   const [projectsRef, projectsVisible] = useReveal<HTMLElement>();
   const [contactRef, contactVisible] = useReveal<HTMLDivElement>(); 
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const activeTheme = (mounted ? resolvedTheme : "light") ?? "light";
+  const showDarkProfile = activeTheme === "dark";
 
   return (
     <div className="space-y-14">
@@ -78,14 +87,24 @@ export function HomeView() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <Image
-              src="/perfil.jpg"
-              alt={content.personalInfo.name}
-              width={320}
-              height={320}
-              className="h-72 w-72 rounded-xl object-cover shadow-soft"
-              priority
-            />
+            <div className="relative h-72 w-72 overflow-hidden">
+              <Image
+                src="/perfil_negroo.png"
+                alt={content.personalInfo.name}
+                fill
+                sizes="18rem"
+                className={`rounded-xl object-cover object-[10%_10%] shadow-soft transition-opacity duration-500 ease-in-out ${showDarkProfile ? "opacity-0" : "opacity-100"}`}
+                priority
+              />
+              <Image
+                src="/perfil_blanco.png"
+                alt={content.personalInfo.name}
+                fill
+                sizes="18rem"
+                className={`rounded-xl object-cover object-[10%_10%] shadow-soft transition-opacity duration-500 ease-in-out ${showDarkProfile ? "opacity-100" : "opacity-0"}`}
+                priority
+              />
+            </div>
           </div>
         </div>
         <div className="grid gap-4 rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-md md:grid-cols-2">
