@@ -11,12 +11,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://minimalfolio.dev"),
+  metadataBase: new URL("https://dazadev.dev"),
   title: {
-    default: "Minimalfolio — Product Designer & Frontend",
-    template: "%s · Minimalfolio",
+    default: "DazaDev — Portafolio de Juan Daza",
+    template: "%s · DazaDev",
   },
-  description: "Minimal, clean portfolio template for product designers and frontend builders.",
+  description: "Portafolio profesional de Juan Daza: Ingeniería en Software, desarrollo web, backend y soluciones modernas.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
