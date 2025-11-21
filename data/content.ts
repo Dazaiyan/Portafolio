@@ -100,6 +100,18 @@ const baseProfileEN: PersonalInfo = {
 
 const experienceES: Experience[] = [
   {
+    title: "Cofundador y Desarrollador Principal — Parkintia",
+    company: "Parkintia - Sistema Inteligente de Gestión de Parqueaderos",
+    dates: "2024 – Presente",
+    location: "Ecuador",
+    bullets: [
+      "Proyecto de emprendimiento con IA y visión por computadora.",
+      "Diseño e implementación del backend con Django REST Framework.",
+      "Desarrollo del frontend con Next.js.",
+      "Integración de modelos de inteligencia artificial para detección de vehículos.",
+    ],
+  },
+  {
     title: "Desarrollador & TICs — MedicalPluss",
     company: "MedicalPluss",
     dates: "2025 – Presente",
@@ -139,7 +151,7 @@ const experienceES: Experience[] = [
     title: "Prácticas Preprofesionales — PUCESM",
     company: "Pontificia Universidad Católica del Ecuador Sede Manabí",
     dates: "2024",
-    location: "Manta, Ecuador",
+    location: "Portoviejo, Ecuador",
     bullets: [
       "Colaboración en proyectos internos de desarrollo de software.",
       "Soporte en mantenimiento de aplicaciones y herramientas académicas.",
@@ -151,7 +163,7 @@ const experienceES: Experience[] = [
     title: "Ganador del concurso Dojo Code — PUCESM",
     company: "Pontificia Universidad Católica del Ecuador Sede Manabí (Dojo Code)",
     dates: "2024",
-    location: "Manta, Ecuador",
+    location: "Portoviejo, Ecuador",
     bullets: [
       "Ganador del concurso de programación Dojo Code durante la semana cultural.",
       "Resolución de desafíos de programación bajo presión de tiempo.",
@@ -161,6 +173,18 @@ const experienceES: Experience[] = [
 ];
 
 const experienceEN: Experience[] = [
+  {
+    title: "Co-founder & Lead Developer — Parkintia",
+    company: "Parkintia - Intelligent Parking Management System",
+    dates: "2024 – Present",
+    location: "Ecuador",
+    bullets: [
+      "Startup project built with AI and computer vision.",
+      "Designed and implemented the backend with Django REST Framework.",
+      "Developed the frontend with Next.js.",
+      "Integrated AI models for vehicle detection.",
+    ],
+  },
   {
     title: "Developer & ICT — MedicalPluss",
     company: "MedicalPluss",
@@ -201,7 +225,7 @@ const experienceEN: Experience[] = [
     title: "Pre-professional Intern — PUCESM",
     company: "Pontificia Universidad Católica del Ecuador Sede Manabí",
     dates: "2024",
-    location: "Manta, Ecuador",
+    location: "Portoviejo, Ecuador",
     bullets: [
       "Collaborated on internal software development projects.",
       "Supported maintenance of academic apps and tools.",
@@ -213,7 +237,7 @@ const experienceEN: Experience[] = [
     title: "Dojo Code Contest Winner — PUCESM",
     company: "Pontificia Universidad Católica del Ecuador Sede Manabí",
     dates: "2024",
-    location: "Manta, Ecuador",
+    location: "Portoviejo, Ecuador",
     bullets: [
       "Winner of the Dojo Code programming contest during cultural week.",
       "Solved programming challenges under time pressure.",

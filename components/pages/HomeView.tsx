@@ -13,6 +13,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { SocialLinksSection } from "@/components/SocialLinksSection";
 import { EducationSection } from "@/components/EducationSection";
 import { CertificationsSection } from "@/components/CertificationsSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
 import Image from "next/image";
 
 function useReveal<T extends HTMLElement>() {
@@ -54,7 +55,7 @@ export function HomeView() {
   const [educationRef, educationVisible] = useReveal<HTMLDivElement>();
   const [certRef, certVisible] = useReveal<HTMLDivElement>();
   const [languagesRef, languagesVisible] = useReveal<HTMLElement>();
-  const [projectsRef, projectsVisible] = useReveal<HTMLElement>();
+  const [projectsRef, projectsVisible] = useReveal<HTMLDivElement>();
   const [contactRef, contactVisible] = useReveal<HTMLDivElement>(); 
 
   useEffect(() => {
@@ -159,12 +160,9 @@ export function HomeView() {
         </div>
       </section>
 
-      <section id="portfolio" ref={projectsRef} className={`space-y-6 border-t border-[var(--card-border)] pt-10 ${revealClass(projectsVisible)}`}>
-        <SectionTitle title={content.projects.title} description={content.projects.description} />
-        <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 text-sm text-muted">
-          {content.projects.note}
-        </div>
-      </section>
+      <div ref={projectsRef} className={`border-t border-[var(--card-border)] pt-10 ${revealClass(projectsVisible)}`}>
+        <ProjectsSection />
+      </div>
 
       <div ref={contactRef} className={revealClass(contactVisible)}>
         <ContactSection />

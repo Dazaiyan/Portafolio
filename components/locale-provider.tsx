@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type { Content, Locale } from "@/data/content";
 import { translations } from "@/data/content";
 
@@ -16,11 +16,14 @@ const LocaleContext = createContext<LocaleContextValue | null>(null);
 const STORAGE_KEY = "minimalfolio-locale";
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    if (typeof window === "undefined") return "en";
-    const stored = window.localStorage.getItem(STORAGE_KEY) as Locale | null;
-    return stored === "es" ? "es" : "en";
-  });
+  const [locale, setLocaleState] = useState<Locale>("en");
+
+  useEffect(() => {
+    const stored = (typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null) as Locale | null;
+    if (stored === "es" || stored === "en") {
+      setLocaleState(stored);
+    }
+  }, []);
 
   const setLocale = (next: Locale) => {
     setLocaleState(next);

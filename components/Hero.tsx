@@ -1,50 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { useLocale } from "./locale-provider";
-
-function useTypewriter(text: string, speed = 80, delay = 0) {
-  const [displayText, setDisplayText] = useState("");
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout | null = null;
-
-    const start = setTimeout(() => {
-      interval = setInterval(() => {
-        setDisplayText((prev) => {
-          if (prev.length === text.length) {
-            if (interval) clearInterval(interval);
-            return prev;
-          }
-          return text.slice(0, prev.length + 1);
-        });
-      }, speed);
-    }, delay);
-
-    return () => {
-      clearTimeout(start);
-      if (interval) clearInterval(interval);
-    };
-  }, [text, speed, delay]);
-
-  return displayText;
-}
+import TextType from "./TextType";
 
 export function Hero() {
   const { content } = useLocale();
-  const subtitle = useTypewriter(content.hero.subtitle, 85, 2000);
 
   return (
     <section className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center bg-slate-50 px-4 py-16 text-slate-900">
       <div className="max-w-3xl text-center">
         <p className="text-sm uppercase tracking-[0.4em] text-slate-500">{content.hero.eyebrow}</p>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">{content.hero.title}</h1>
-        <p className="mt-4 text-2xl font-medium text-slate-800 sm:text-3xl">
-          <span>{subtitle}</span>
-          <span className="ml-1 animate-pulse text-slate-500">|</span>
-        </p>
+        <TextType
+          as="p"
+          text={content.hero.subtitle}
+          typingSpeed={120}
+          pauseDuration={3000}
+          showCursor
+          cursorCharacter="|"
+          className="mt-4 text-2xl font-medium text-slate-800 sm:text-3xl"
+          cursorClassName="text-slate-500"
+        />
         <p className="mt-6 text-lg leading-relaxed text-slate-600">{content.hero.description}</p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
